@@ -1,0 +1,23 @@
+// OPERADOR ||
+console.log(false || {}); //Antes que darnos un valor false nos da un objeto, aunque no contenga valores, pero es algo usable
+console.log("string" || true); //Como la primera condicion es un valor valido, nos la muestra y no es necesario comprobar la segunda
+console.log([] || 100); //Similar al primer caso, el array [] es valido, aunque no tenga contenido aun, por lo que no es necesario ir a la segunda condicion
+console.log(null || "Prueba"); //Tambien parecido al primer caso, en vez de devolver un valor null, hace comprobacion en la segunda condicion y ve que es un valor valido
+console.log("" || true); //Prioriza la muestra del valor true, ya que "" se considera como false al ser un string vacio
+console.log(undefined || false); //Muestra false porque tiene mayor peso entre los dos
+
+// Operador &&
+console.log(false && {}); //Con que un valor sea falso, ya no se cumple la condicion en ambas
+console.log("string" && true); //Ambos son valores validos, pero muestra el segundo porque es donde hace la ultima comprobacion
+console.log([] && 100); //Ambos son valores validos, pero muestra el segundo porque es donde hace la ultima comprobacion
+console.log(null && "Prueba"); //Muesta null al no cumplirse la condicion y no especificarle un valor
+console.log("" && true); //Aunque antes deciamos que se considera como false en OR, en AND se considera como que es algo valido, por lo que se cumple la condicion y muestra un string vacio
+console.log(undefined && false); //No se cumple la condicion y devuelve undefined porque es el primer valor que chequea
+
+// Operador ??
+console.log(false ?? {}); // ?? solo considera false el undefined o null, por lo que este false le vale y lo muestra
+console.log("string" ?? true); // Considera la cadena como algo valido y la muestra al ser el primer valor
+console.log([] ?? 100); // Considera el array como algo valido y la muestra al ser el primer valor
+console.log(null ?? "Prueba"); // Como el null es considerado como false, se va a la segunda comprobacion y al ser valida la muestra
+console.log("" ?? true); // ?? solo considera false el undefined o null, por lo que este false le vale y lo muestra
+console.log(undefined ?? false); // Como el primer valor es considerado false, se va al segundo, que en este caso resulta ser valido
